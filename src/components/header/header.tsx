@@ -1,9 +1,9 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { useHistory } from "react-router-dom";
-
+import Typography from "@material-ui/core/Typography";
 import { useStyles } from "./styles";
+import { colorsLight } from "../../config/styles/colors";
 
 export const Header: React.FC = () => {
     const classes = useStyles();
@@ -11,7 +11,11 @@ export const Header: React.FC = () => {
     return (
         <div className={classes.root}>
             <AppBar className={classes.navigation} position="static">
-                <Toolbar></Toolbar>
+                <Toolbar>
+                    <Typography variant="h5" style={{ fontWeight: "bold", color: colorsLight.primary }}>
+                        Minhas Tarefas
+                    </Typography>
+                </Toolbar>
             </AppBar>
         </div>
     );

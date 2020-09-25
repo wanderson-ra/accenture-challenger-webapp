@@ -6,6 +6,7 @@ import { useDeleteTask } from "../../../../hooks/useDeleteTask";
 import { Task } from "../../../../domains/task";
 import { ModalLoading } from "../../../../components/modalLoading/modalLoading";
 import { ResponsiveDialog } from "../../../../components/dialog/dialog";
+import { colorsLight } from "../../../../config/styles/colors";
 
 interface DeleteProps {
     task: Task;
@@ -41,7 +42,7 @@ export const Delete: React.FC<DeleteProps> = ({ task, handlerGetAllTasks }) => {
     return (
         <div>
             <IconButton onClick={() => handlerDeleteTask(task.id)}>
-                <DeleteIcon />
+                <DeleteIcon style={{ color: colorsLight.primary }} />
             </IconButton>
             <ModalLoading isSuccess={false} open={isLoadingDeleteTask} />
 
