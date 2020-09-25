@@ -10,6 +10,8 @@ import { colorsLight } from "../../config/styles/colors";
 
 import { Delete } from "./actions/delete/delete";
 import { Check } from "./actions/check/check";
+import { AddTask } from "./actions/add/add";
+
 import { ResponsiveDialog } from "../../components/dialog/dialog";
 
 export const Home: React.FC = () => {
@@ -48,7 +50,7 @@ export const Home: React.FC = () => {
                         title="Tarefas"
                         actions={[
                             {
-                                icon: "add",
+                                icon: () => <AddTask />,
                                 tooltip: "Nova tarefa",
                                 isFreeAction: true,
                                 onClick: () => alert("You want to add a new row"),
