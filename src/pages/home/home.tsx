@@ -13,9 +13,10 @@ import { Delete } from "./actions/delete/delete";
 import { Check } from "./actions/check/check";
 
 import { ResponsiveDialog } from "../../components/dialog/dialog";
-import { Task } from "../../domains/task";
 import { useCreateTask } from "../../hooks/useCreateTask";
 import { localization, columns } from "../../config/styles/table";
+
+import { Task } from "../../domains/task";
 
 export const Home: React.FC = () => {
     const [tasksTable, setTasksTable] = useState<Array<Task> | null>(null);
