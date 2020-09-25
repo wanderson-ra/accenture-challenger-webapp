@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { Dispatch, SetStateAction, useCallback, useEffect } from "react";
 import CheckBoxOutlineBlank from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBox from "@material-ui/icons/CheckBox";
 import IconButton from "@material-ui/core/IconButton";
@@ -11,10 +11,11 @@ import { colorsLight } from "../../../../config/styles/colors";
 
 interface CheckProps {
     task: Task;
-    handlerGetAllTasks: () => void;
+    tasksTable: Array<Task>;
+    setTasksTable: Dispatch<SetStateAction<Task[]>>;
 }
 
-export const Check: React.FC<CheckProps> = ({ task, handlerGetAllTasks }) => {
+export const Check: React.FC<CheckProps> = ({ task, setTasksTable, tasksTable }) => {
     const {
         errorMessageMarkIsDone,
         isLoadingMarkIsDone,
@@ -34,10 +35,19 @@ export const Check: React.FC<CheckProps> = ({ task, handlerGetAllTasks }) => {
         resetMarkIsDone();
     }, [resetMarkIsDone]);
 
+    const handlerMarkIsDoneItem = useCallback(
+        (taskId: number) => {
+            const taskIsDonedIndex = tasksTable.findIndex((taskTable) => taskTable.id === taskId);
+            tasksTable[taskIsDonedIndex].isDone = true;
+            setTasksTable(tasksTable);
+        },
+        [tasksTable, setTasksTable]
+    );
+
     useEffect(() => {
         if (successMarkIsDone) {
             resetMarkIsDone();
-            handlerGetAllTasks();
+            handlerMarkIsDoneItem(task.id);
         }
     }, [successMarkIsDone]);
 

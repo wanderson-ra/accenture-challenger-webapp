@@ -2,7 +2,7 @@ export class Task {
     public readonly id: number;
     public readonly date: Date;
     public readonly description: string;
-    public readonly isDone: boolean;
+    public isDone: boolean;
 
     constructor(id: number, date: Date, description: string, isDone: boolean) {
         this.id = id;

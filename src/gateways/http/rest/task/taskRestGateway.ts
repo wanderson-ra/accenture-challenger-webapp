@@ -28,3 +28,12 @@ export const markIsDone = async (taskId: number): Promise<void> => {
         throw handlerError(error);
     }
 };
+
+export const create = async (task: Task): Promise<Task> => {
+    try {
+        const taskResponse = await baseRest.post("tasks", task);
+        return taskResponse.data;
+    } catch (error) {
+        throw handlerError(error);
+    }
+};

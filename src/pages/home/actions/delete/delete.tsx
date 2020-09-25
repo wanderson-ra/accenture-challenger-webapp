@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { Dispatch, SetStateAction, useCallback, useEffect } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 
@@ -10,9 +10,10 @@ import { colorsLight } from "../../../../config/styles/colors";
 
 interface DeleteProps {
     task: Task;
-    handlerGetAllTasks: () => void;
+    tasksTable: Array<Task>;
+    setTasksTable: Dispatch<SetStateAction<Task[]>>;
 }
-export const Delete: React.FC<DeleteProps> = ({ task, handlerGetAllTasks }) => {
+export const Delete: React.FC<DeleteProps> = ({ task, setTasksTable, tasksTable }) => {
     const {
         deleteTask,
         errorMessageDeleteTask,
@@ -32,10 +33,18 @@ export const Delete: React.FC<DeleteProps> = ({ task, handlerGetAllTasks }) => {
         resetDeleteTask();
     }, [resetDeleteTask]);
 
+    const handlerDeleteItem = useCallback(
+        (taskId: number) => {
+            const filteredDeleteTasks = tasksTable.filter((taskTable) => taskTable.id !== taskId);
+            setTasksTable(filteredDeleteTasks);
+        },
+        [tasksTable, setTasksTable]
+    );
+
     useEffect(() => {
         if (successDeleteTask) {
             resetDeleteTask();
-            handlerGetAllTasks();
+            handlerDeleteItem(task.id);
         }
     }, [successDeleteTask]);
 

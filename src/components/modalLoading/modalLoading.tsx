@@ -5,7 +5,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 
 import { styles } from "./styles";
 import { colorsLight } from "../../config/styles/colors";
-import animation from "../../assets/animations/login.json";
+import animation from "../../assets/animations/animation.json";
 
 interface ModalLoadingProps {
     open: boolean;
