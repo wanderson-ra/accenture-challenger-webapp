@@ -1,0 +1,112 @@
+{
+    "name": "challenger",
+    "version": "1.0.0-RELEASE",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.10.1",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/lab": "^4.0.0-alpha.55",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "axios": "^0.19.2",
+        "crypto-js": "^4.0.0",
+        "env-cmd": "^10.1.0",
+        "factory.ts": "^0.5.1",
+        "form-data": "^3.0.0",
+        "google-map-react": "^1.1.7",
+        "lodash": "^4.17.15",
+        "material-table": "^1.69.0",
+        "material-ui-dropzone": "^3.1.0",
+        "material-ui-image": "^3.2.3",
+        "moment-timezone": "^0.5.31",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-icons": "^3.10.0",
+        "react-input-mask": "^3.0.0-alpha.2",
+        "react-lottie": "^1.2.3",
+        "react-remove-scroll-bar": "^2.1.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1",
+        "react-spinners": "^0.8.3",
+        "typescript": "^3.9.5"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "jest --forceExit --detectOpenHandles",
+        "eject": "react-scripts eject",
+        "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+        "dev": "env-cmd  -f ./environments/.env.local react-scripts start"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/react-hooks": "^3.3.0",
+        "@types/axios": "^0.14.0",
+        "@types/crypto-js": "^3.1.47",
+        "@types/google-map-react": "^1.1.8",
+        "@types/jest": "^24.0.0",
+        "@types/jest-when": "^2.7.1",
+        "@types/lodash": "^4.14.155",
+        "@types/moment-timezone": "^0.5.13",
+        "@types/nock": "^11.1.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "@types/react-input-mask": "^2.0.5",
+        "@types/react-lottie": "^1.2.5",
+        "@types/react-router-dom": "^5.1.5",
+        "guid-typescript": "^1.0.9",
+        "jest-when": "^2.7.2",
+        "nock": "^12.0.3",
+        "react-test-renderer": "^16.13.1",
+        "ts-jest": "^26.1.0"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "coveragePathIgnorePatterns": [
+            "<rootDir>/node_modules/",
+            "<rootDir>/__tests__/__mocks__/",
+            "<rootDir>/__tests__/__fixture__/",
+            "<rootDir>/src/assets/",
+            "<rootDir>/src/configs/",
+            "<rootDir>/src/utils/"
+        ],
+        "transform": {
+            "^.+\\.ts?$": "ts-jest",
+            "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+        "testPathIgnorePatterns": [
+            "\\.snap$",
+            "<rootDir>/node_modules/",
+            "<rootDir>/__tests__/__mocks__/",
+            "<rootDir>/__tests__/__fixture__/"
+        ],
+        "cacheDirectory": ".jest/cache"
+    }
+}
