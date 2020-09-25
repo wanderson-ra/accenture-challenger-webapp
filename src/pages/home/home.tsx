@@ -37,7 +37,11 @@ export const Home: React.FC = () => {
                 <div className={classes.container}>
                     <MaterialTable
                         columns={[
-                            { title: "Data", field: "date", type: "date" },
+                            {
+                                title: "Data",
+                                field: "date",
+                                type: "date",
+                            },
                             { title: "Descrição", field: "description" },
                         ]}
                         data={tasks ? tasks : []}
@@ -63,6 +67,7 @@ export const Home: React.FC = () => {
                             }),
                         ]}
                         options={{
+                            sorting: true,
                             rowStyle: {
                                 backgroundColor: colorsLight.rowStyle.backgroundColor,
                             },
