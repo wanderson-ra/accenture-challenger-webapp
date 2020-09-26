@@ -10,7 +10,7 @@
 
 ## Docker
 
-#### PS: O projeto está disponível no [Docker Hub](https://hub.docker.com/repository/docker/wander25rda/accenture-challenge)
+#### PS: O projeto está disponível no [Docker Hub](https://hub.docker.com/repository/docker/wander25rda/accenture-challenge-webapp)
 
 -   Se você deseja gerar a imagem, use (você precisa do lib (jar) no local):
     `sudo docker build -t wander25rda/accenture-challenge-webapp:1.0.0 . `
