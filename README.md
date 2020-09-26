@@ -17,6 +17,7 @@
 
 -   Ou se você deseja apenas executar, use o comando:
     `sudo docker run -d -it -p 3000:80/tcp --name accenture-challenge-webapp wander25rda/accenture-challenge-webapp:1.0.0`
+
     `sudo docker start accenture-challenge-webapp`
 
 -   No navegador local: http://localhost:3000/
