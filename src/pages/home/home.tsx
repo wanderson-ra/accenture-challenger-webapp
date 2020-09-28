@@ -19,7 +19,7 @@ import { localization, columns } from "../../config/styles/table";
 import { Task } from "../../domains/task";
 
 export const Home: React.FC = () => {
-    const [tasksTable, setTasksTable] = useState<Array<Task> | null>(null);
+    const [tasksTable, setTasksTable] = useState<Array<Task>>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
